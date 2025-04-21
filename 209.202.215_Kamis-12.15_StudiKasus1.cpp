@@ -2,76 +2,84 @@
 using namespace std;
 
 class KTP{
+	friend istream& operator>>(istream& in, KTP& ktp);
+	friend ostream& operator<<(ostream& out, const KTP& ktp);
 	private:
-		string nik,prov,kab,nama,tgl,jenis,alamat,kel,kec,agama,status,pekerjaan,kewarganegaraan;
+		string prov,kab,nama,tgl,jenis,alamat,kel,kec,agama,status,pekerjaan,kewarganegaraan;
 		char gol;
 		int rt,rw;
+		long long int nik;
 	public:
-		void tulisKTP(){
+		istream& operator(istream& operator, KTP& ktp){
 			cout<<"Masukan NIK anda \t\t : ";
-			cin>>nik;
+			in>>ktp.nik;
+			in.ignore();
 			cin.ignore();
 			cout<<"Masukan Provinsi Anda \t\t : ";
-			getline(cin,prov);
+			getline(in,ktp.prov);
 			cout<<"Masukan Kabupaten/Kecamatan Anda : ";
-			getline(cin,kab);
+			getline(in,ktp.kab);
 			cout<<"Masukan Nama Anda \t\t : ";
-			getline(cin,nama);	
+			getline(in,ktp.nama);	
 			cout<<"Masukan Tempat/Tgl Lahir Anda \t : ";
-			getline(cin,tgl);
+			getline(in,ktp.tgl);
 			cout<<"Masukan Jenis Kelamin Anda \t : ";
-			getline(cin,jenis);
+			getline(in,ktp.jenis);
 			cout<<"Masukan Golongan Darah Anda \t : ";
-			cin>>gol;
-			cin.ignore();
+			in>>gol;
+			in.ignore();
 			cout<<"Masukan Alamat Anda \t\t : ";
-			getline(cin,alamat);
+			getline(in,ktp.alamat);
 			cout<<"Masukan RT Anda \t\t : ";
-			cin>>rt;
+			in>>ktp.rt;
+			in.ignore();
 			cout<<"Masukan RW Anda \t\t : ";
-			cin>>rw;
+			in>>ktp.rw;
+			in.ignore();
 			cout<<"Masukan Kelurahan/Desa Anda \t : ";
-			cin>>kel;
+			getline(in,ktp.kel);
 			cout<<"Masukan Kecamatan Anda \t\t : ";
-			cin>>kec;
+			getline(in,ktp.kec);
 			cout<<"Masukan Agama Anda \t\t : ";
-			cin>>agama;
-			cin.ignore();
+			getline(in,ktp.agama);
 			cout<<"Masukan Status Perkawinan Anda\t : ";
-			getline(cin,status);
+			getline(in,ktp.status);
 			cout<<"Masukan Pekerjaan Anda \t\t : ";
-			cin>>pekerjaan;
+			getline(in,ktp.pekerjaan);
 			cout<<"Masukan Kewarganegaraan Anda\t : ";
-			cin>>kewarganegaraan;
+			getline(in,ktp.kewarganegaraan);
 			cout<<endl;
 			cout<<endl;
+
+			return in;
 		}
-		void tampilkanHasil(){
-			cout<<"+=======================================================+\n";
-			cout<<"\t\t  PROVINSI "<<prov<<" \t\t\t"<<endl;
-			cout<<"\t\t  KABUPATEN "<<kab<<" \t\t\t"<<endl;
-			cout<<"+=======================================================+\n";
-			cout<<"NIK\t\t\t: "<<nik<<endl;
-			cout<<"Nama\t\t\t: "<<nama<<endl;
-			cout<<"Tempat/Tgl Lahir\t: "<<tgl<<endl;
-			cout<<"Jenis Kelamin\t\t: "<<jenis<<"\t Gol. Darah: "<<gol<<endl;
-			cout<<"Alamat\t\t\t: "<<alamat<<endl;
-			cout<<"\t RT/RW \t\t: "<<rt<<"/"<<rw<<endl;
-			cout<<"\t Kel/Desa \t: "<<kel<<endl;
-			cout<<"\t Kecamatan \t: "<<kec<<endl;
-			cout<<"Agama\t\t\t: "<<agama<<endl;
-			cout<<"Status Perkawinan\t: "<<status<<endl;
-			cout<<"Pekerjaan\t\t: "<<pekerjaan<<endl;
-			cout<<"Kewarganegaraan\t\t: "<<kewarganegaraan<<endl;
-			cout<<"Berlaku Hingga\t\t: SEUMUR HIDUP"<<endl;
-			cout<<"+=======================================================+\n";
-			
+		ostream& operator<<(ostream& out, const KTP& ktp) {
+	out << "+=======================================================+\n";
+	out << "\t\t  PROVINSI " << ktp.prov << " \t\t\t" << endl;
+	out << "\t\t  KABUPATEN " << ktp.kab << " \t\t\t" << endl;
+	out << "+=======================================================+\n";
+	out << "NIK\t\t\t: " << ktp.nik << endl;
+	out << "Nama\t\t\t: " << ktp.nama << endl;
+	out << "Tempat/Tgl Lahir\t: " << ktp.tgl << endl;
+	out << "Jenis Kelamin\t\t: " << ktp.jenis << "\t Gol. Darah: " << ktp.gol << endl;
+	out << "Alamat\t\t\t: " << ktp.alamat << endl;
+	out << "\t RT/RW \t\t: " << ktp.rt << "/" << ktp.rw << endl;
+	out << "\t Kel/Desa \t: " << ktp.kel << endl;
+	out << "\t Kecamatan \t: " << ktp.kec << endl;
+	out << "Agama\t\t\t: " << ktp.agama << endl;
+	out << "Status Perkawinan\t: " << ktp.status << endl;
+	out << "Pekerjaan\t\t: " << ktp.pekerjaan << endl;
+	out << "Kewarganegaraan\t\t: " << ktp.kewarganegaraan << endl;
+	out << "Berlaku Hingga\t\t: SEUMUR HIDUP" << endl;
+	out << "+=======================================================+\n";
+
+	return out;
 		}
-	};
+};
 int main(){
 	KTP data;
-	data.tulisKTP();
-	data.tampilkanHasil();
+	cin >> data;
+	cout << data;
 	return 0;
 }
 		
