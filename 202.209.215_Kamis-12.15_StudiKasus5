@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std;
+class Program{
+	private:
+		string nama,matkul,nim;
+		int totalSks = 0,sks[99],jumlahMatkul,biaya=125000,total_biaya;
+	int j=0;
+		
+	public:
+		void cetak();
+		int hitung(int n,int biaya);
+		
+		
+};	
+void Program :: cetak(){
+		cout<<"+=======================================+"<<endl;
+		cout<<"|	PROGRAM HITUNG UKT MAHASISWA	|"<<endl;
+		cout<<"+=======================================+"<<endl;	
+		cout<<"|Masukan Nama\t\t\t: ";cin>>nama;
+		cout<<"|Masukan NIM\t\t\t: ";cin>>nim;
+		cout<<"|Masukan Jumlah mataKuliah\t:";cin>>jumlahMatkul;
+		cout<<"+====================================+"<<endl;
+		cout << endl;
+		for(int i=0;i<jumlahMatkul;i++){
+			cout<<"Masukan nama mata kuliah ke -" <<i+1<<" : ";
+			cin>>matkul;
+			cout<<"Masukan jumlah SKS mata kuliah ke-"<<i+1<<" : ";
+			cin>>sks[i];
+			j++;
+		
+		}
+		for(int i=0;i<j;i++){
+		totalSks += sks[i];
+		}
+		cout << "\n=============================" << endl;
+		cout << "Total Sks : " << totalSks << endl;
+		total_biaya = hitung(totalSks,biaya);
+		cout << "Total Pembayaran : " << total_biaya - (total_biaya  * 0.15) << endl;
+		cout << "=============================" << endl;
+
+}
+		int Program::hitung(int n,int biaya){
+			if(n<=0){
+			return 0;
+			}
+			else{
+			return biaya + hitung(n-1,biaya);
+			}
+		}
+		
+
+int main(){
+	Program hitung;
+	hitung.cetak();
+
+}
