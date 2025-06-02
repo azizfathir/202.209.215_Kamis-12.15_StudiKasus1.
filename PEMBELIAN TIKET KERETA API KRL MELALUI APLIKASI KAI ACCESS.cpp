@@ -176,7 +176,7 @@ class KaiApp{
         int jumlahTiket;
         const int hargaTiket = 8000;
 
-        cout<<"\n=== PEMBAYARAN TIKET KERETA ===\n";
+        cout<<"\n=== PEMBELIAN TIKET KERETA ===\n";
         cout<<"Masukkan Nama Anda       : ";
         getline(cin, nama);
         cout<<"Masukkan Stasiun Asal    : ";
