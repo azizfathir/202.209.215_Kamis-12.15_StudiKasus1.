@@ -161,7 +161,7 @@ class KaiApp{
 
     
     void tampilJadwal(){
-    	cout << "\n=== JADWAL KRL PALUR = YOGYAKARTA ===\n";
+    	cout << "\n=== JADWAL KRL PALUR <=> YOGYAKARTA ===\n";
     	   for (int i= 0; i<jumlahJadwal;i++) {
             cout<< "- " <<jadwalKereta[i].asal<< " ke " <<jadwalKereta[i].tujuan<< ": ";
             for (int j= 0; j<jadwalKereta[i].jumlahJam;j++) {
