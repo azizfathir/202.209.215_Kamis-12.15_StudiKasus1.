@@ -5,9 +5,9 @@ class karyawan{
 	private:
 	int jumlah;
 	string nama[99];
-	string id[99];
+	int id[99];
 	string jabatan[99];
-	string telp[99];
+	int telp[99];
 	public:
 	
 	void inputKaryawan(){
@@ -23,7 +23,7 @@ class karyawan{
 			cout << "Masukkan Jabatan : ";
 			getline(cin,jabatan[i]);
 			cout << "Masukkan No. Telp: ";
-			getline(cin,telp[i]);
+			cin >> telp[i];
 			
 			
 		}
@@ -36,7 +36,7 @@ class karyawan{
 		cout << "| ID       : " << id[i] << endl;
 		cout << "| Nama     : " << nama[i] << endl;
 		cout << "| Jabatan  : " << jabatan[i] << endl;
-		cout << "| No. Telp :  " << telp[i] << endl;
+		cout << "| No. Telp : " << telp[i] << endl;
 		}
 		cout << endl;
 	}
@@ -45,7 +45,7 @@ class karyawan{
 		for(int i = 0 ; i< jumlah;i++){
 			for(int j = i + 1;j < jumlah;j++){
 				if(id[i] > id[i + 1]){
-					string temp = id[i];
+					int temp = id[i];
 					id[i] = id[i+1];
 					id[i+1] = temp;
 					string temp2 = nama[i];
@@ -54,7 +54,7 @@ class karyawan{
 					string temp3 = jabatan[i];
 					jabatan[i] = jabatan[i+1];
 					jabatan[i+1] = temp3;
-					string temp4 = telp[i];
+					int temp4 = telp[i];
 					telp[i] = telp[i+1];
 					telp[i+1] = temp4;
 				}
@@ -80,7 +80,7 @@ class karyawan{
 		for(int i = 0 ; i< jumlah;i++){
 			for(int j = i + 1;j < jumlah;j++){
 				if(id[i] < id[i + 1]){
-					string temp = id[i];
+					int temp = id[i];
 					id[i] = id[i+1];
 					id[i+1] = temp;
 					string temp2 = nama[i];
@@ -89,7 +89,7 @@ class karyawan{
 					string temp3 = jabatan[i];
 					jabatan[i] = jabatan[i+1];
 					jabatan[i+1] = temp3;
-					string temp4 = telp[i];
+					int temp4 = telp[i];
 					telp[i] = telp[i+1];
 					telp[i+1] = temp4;
 				}
@@ -110,7 +110,7 @@ class karyawan{
 		cout << endl;
 	}
 	void cariId(){
-		string cari;
+		int cari;
 		bool kondisi = false;
 		cout << "Masukkan ID yang dicari: ";
 		cin >> cari;
