@@ -11,16 +11,16 @@ class karyawan{
 	public:
 	
 	void inputKaryawan(){
-		cout << "Masukkan jumlah Karyawan: ";
+		cout << "Masukkan Jumlah Karyawan: ";
 		cin >>jumlah;
 		for(int i = 0; i < jumlah ;i++){
 			cout << "Masukkan data ke - " << i + 1 << endl;
 			cout << "Masukkan ID: ";
 			cin >> id[i];
 			cin.ignore();
-			cout << "Masukkan nama karyawan : ";
+			cout << "Masukkan Nama Karyawan : ";
 			getline(cin,nama[i]);
-			cout << "Masukkan jabatan : ";
+			cout << "Masukkan Jabatan : ";
 			getline(cin,jabatan[i]);
 			cout << "Masukkan No. Telp: ";
 			getline(cin,telp[i]);
@@ -36,7 +36,7 @@ class karyawan{
 		cout << "| ID       : " << id[i] << endl;
 		cout << "| Nama     : " << nama[i] << endl;
 		cout << "| Jabatan  : " << jabatan[i] << endl;
-		cout << "| No. Telp : " << telp[i] << endl;
+		cout << "| No. Telp :  " << telp[i] << endl;
 		}
 		cout << endl;
 	}
@@ -66,14 +66,13 @@ class karyawan{
 		cout << "+=================================+" << endl;
 		cout << "|          DATA KARYAWAN          |" << endl;
 		cout << "+=================================+" << endl;
-		for(int i = 0; i < jumlah ;i++){
 		cout << "| ID       : " << id[i] << endl;
 		cout << "| Nama     : " << nama[i] << endl;
 		cout << "| Jabatan  : " << jabatan[i] << endl;
 		cout << "| No. Telp : " << telp[i] << endl;
-		}
-		cout << endl;
+		
 	}
+		cout << endl;
 }
 
 	void urutDescending(){
@@ -102,14 +101,13 @@ class karyawan{
 		cout << "+=================================+" << endl;
 		cout << "|          DATA KARYAWAN          |" << endl;
 		cout << "+=================================+" << endl;
-		for(int i = 0; i < jumlah ;i++){
 		cout << "| ID       : " << id[i] << endl;
 		cout << "| Nama     : " << nama[i] << endl;
 		cout << "| Jabatan  : " << jabatan[i] << endl;
 		cout << "| No. Telp : " << telp[i] << endl;
-		}
-		cout << endl;
+		
 	}
+		cout << endl;
 	}
 	void cariId(){
 		string cari;
